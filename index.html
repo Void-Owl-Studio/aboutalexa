@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me: AlexaMerens</title>
+  <style>
+    /* CSS styles go here */
+    body {
+		font-family: Monaco, monospace;
+		text-align: center;
+		transition: background-image 1s ease-in-out;
+		background-attachment: fixed;
+    }
+	h1 {
+		color: #2C3E50;
+		font-size: 2em;
+		text-align: center;
+		margin-top: 50px;
+		transition: color 0.5s ease-in-out, font-size 0.5s ease-in-out;
+		animation: pulse 1s infinite;
+	}
+
+	h1:hover {
+		color: #0099ff;
+		font-size: 2.5em;
+		cursor: pointer;
+	}
+    img {
+      width: 200px;
+      margin: 25px 0;
+      display: block;
+      margin: 0 auto;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      margin: 0 25px;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      width: 300px;
+      margin: 20px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 4px 4px #CCC;
+      text-align: left;
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    .card p {
+      margin: 10px 0;
+    }
+
+    .card_second {
+      width: 315px;
+      margin: 20px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 4px 4px #CCC;
+      text-align: left;
+    }
+    .card_second h2 {
+      margin-top: 0;
+    }
+    .card_second p {
+      margin: 10px 0;
+    }
+
+	.left-section {
+	  position: fixed;
+	  top: 10px;
+	  left: 10px;
+      width: 25px;
+      margin: 20px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 4px 4px #CCC;
+      text-align: center;
+	}
+	.left-section:hover {
+	  cursor: pointer;
+	}
+	.left-section img {
+	  width: 25px;
+	  margin-right: 10px;
+	}
+	.left-section a {
+	  display: inline-block;
+	  margin-right: 10px;
+	}
+	.profile-picture-frame {
+	  position: relative;
+	  width: 200px;
+	  height: 250px;
+	  margin: 0 auto;
+	}
+
+	.profile-picture-frame img {
+	  width: 100%;
+	  height: 100%;
+	  border-radius: 30px;
+	}
+
+	.neon-border {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width:190px;
+	  height: 240px;
+	  border: 5px solid #fff;
+	  border-radius: 30px;
+	  animation: neon-border 1s ease-in-out infinite;
+	}
+	@keyframes neon-border {
+	  0% {
+		border-color: #fff;
+	  }
+	  50% {
+		border-color: #D33859;
+	  }
+	  100% {
+		border-color: #fff;
+	  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="left-section">
+    <a href="https://github.com/iWuna">
+      <img src="github-icon.svg" alt="GitHub"><br>
+    </a>
+    <a href="https://www.youtube.com/channel/UCZaHZ2cY4mlKdll3W4Blb5Q">
+      <img src="youtube-icon.svg" alt="YouTube"><br>
+    </a>
+    <a href="https://discord.gg/qxhDJqJvKC">
+      <img src="discord-icon.svg" alt="Discord"><br>
+    </a>
+    <a href="https://vk.com/id337341318">
+      <img src="vk-icon.svg" alt="VK">
+    </a>
+  </div>
+  <div class="container">
+    <div class="card">
+      <div class="profile-picture-frame">
+        <img src="profile-picture.jpg" alt="Profile Picture">
+        <div class="neon-border"></div>
+      </div>
+      <br>
+      <h2>Hello!</h2>
+      <p>My name is Alexandra, and i'm Neural-Network Designer.</p>
+      <p>I have a small experience in several programming languages.</p>
+	  <p>Which includes JS, Python, and C++ with BYOND modified version of C#.</p>
+    </div>
+    <div class="card_second">
+      <h2>My projects:</h2>
+      <ul>
+		<a href="https://github.com/iWuna/Fallout-13">
+			<li>Fallout 13 (BYOND)</li></a>
+		<a href="https://github.com/iWuna/ATMTA-2.20">
+			<li>ATMTA 2022 (BYOND)</li></a>
+		<a href="https://github.com/iWuna/STALKER2020-iWunaDev">
+			<li>STALKER 2020 (BYOND)</li></a>
+		<a href="https://github.com/iWuna/Escape-From-Tisanovo">
+			<li>Escape From Tisanovo (BYOND)</li></a>
+		<a href="https://void-owl-studio.github.io/site/">
+			<li>FreeMP (MOD)</li></a><br>
+	  </ul>
+	  <h2>CURRENT MAIN PROJECT</h2>
+		<iframe width="315" height="315" src="https://www.youtube.com/embed/jX5aSJub6BQ"></iframe>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code goes here
+    var images = ['blue.svg', 'pink.svg', 'white.svg', 'pink.svg'];
+    var currentImageIndex = 0;
+    var body = document.querySelector("body");
+
+    function updateBodyBackground() {
+      body.style.backgroundImage = "url(" + images[currentImageIndex] + ")";
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+    }
+
+    setInterval(updateBodyBackground, 5000);
+    updateBodyBackground();
+  </script>
+</body>
+</html>
+
+
