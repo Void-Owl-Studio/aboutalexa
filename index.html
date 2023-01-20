@@ -5,9 +5,10 @@
   <style>
     /* CSS styles go here */
     body {
+		cursor: url("cursor.cur"), auto;
 		font-family: Monaco, monospace;
 		text-align: center;
-		transition: background-image 1s ease-in-out;
+		transition: background-image 2s ease-in-out;
 		background-attachment: fixed;
     }
 	h1 {
@@ -35,6 +36,15 @@
       line-height: 1.5em;
       margin: 0 25px;
     }
+	a {
+	  color: #000000; /* The color of the text */
+	  text-decoration: none; /* Remove the underline */
+	}
+
+	a:hover {
+	  color: #FF0000; /* The color of the text when hovered */
+	  text-decoration: underline; /* Add an underline when hovered */
+	}
     .container {
       width: 80%;
       margin: 0 auto;
@@ -43,12 +53,13 @@
       justify-content: center;
     }
     .card {
-      width: 300px;
+      width: 315px;
       margin: 20px;
       padding: 20px;
       background-color: white;
       box-shadow: 4px 4px #CCC;
       text-align: left;
+	  border-radius: 15px;
     }
     .card h2 {
       margin-top: 0;
@@ -64,6 +75,7 @@
       background-color: white;
       box-shadow: 4px 4px #CCC;
       text-align: left;
+	  border-radius: 15px;
     }
     .card_second h2 {
       margin-top: 0;
@@ -82,9 +94,7 @@
       background-color: white;
       box-shadow: 4px 4px #CCC;
       text-align: center;
-	}
-	.left-section:hover {
-	  cursor: pointer;
+	  border-radius: 15px;
 	}
 	.left-section img {
 	  width: 25px;
@@ -93,6 +103,22 @@
 	.left-section a {
 	  display: inline-block;
 	  margin-right: 10px;
+	  position: relative;
+	}
+	.popup {
+		position: absolute;
+		transform: translate(55px,-30px);
+		background: #fff;
+		padding: 10px;
+		border-radius: 15px;
+		transition: transform 0.2s ease-in-out;
+		visibility: hidden;
+		box-shadow: 4px 4px #CCC;
+		color: #2C3E50;
+	}
+	.left-section a:hover .popup {
+		transform: translate(60px,-30px);
+		visibility: visible;
 	}
 	.profile-picture-frame {
 	  position: relative;
@@ -105,6 +131,7 @@
 	  width: 100%;
 	  height: 100%;
 	  border-radius: 30px;
+	  box-shadow: 5px 5px #CCC;
 	}
 
 	.neon-border {
@@ -115,7 +142,7 @@
 	  height: 240px;
 	  border: 5px solid #fff;
 	  border-radius: 30px;
-	  animation: neon-border 1s ease-in-out infinite;
+	  animation: neon-border 10s ease-in-out infinite;
 	}
 	@keyframes neon-border {
 	  0% {
@@ -132,20 +159,32 @@
 </head>
 
 <body>
-  <div class="left-section">
+<div class="left-section">
     <a href="https://github.com/iWuna">
-      <img src="github-icon.svg" alt="GitHub"><br>
+      <img src="github-icon.svg">
+      <div class="popup">GitHub</div>
+	  <br>
     </a>
     <a href="https://www.youtube.com/channel/UCZaHZ2cY4mlKdll3W4Blb5Q">
-      <img src="youtube-icon.svg" alt="YouTube"><br>
+      <img src="youtube-icon.svg">
+      <div class="popup">YouTube</div>
+	  <br>
     </a>
     <a href="https://discord.gg/qxhDJqJvKC">
-      <img src="discord-icon.svg" alt="Discord"><br>
+      <img src="discord-icon.svg">
+      <div class="popup">Discord</div>
+	  <br>
     </a>
     <a href="https://vk.com/id337341318">
-      <img src="vk-icon.svg" alt="VK">
+      <img src="vk-icon.svg">
+      <div class="popup">VK</div>
+	  <br>
     </a>
-  </div>
+	<a href="https://soundcloud.com/thatchaoticart/end-of-evangelion-komm-susser">
+	  <img src="rei.gif">
+	  <div class="popup">Who i'm?</div>
+	</a>
+</div>
   <div class="container">
     <div class="card">
       <div class="profile-picture-frame">
@@ -153,7 +192,7 @@
         <div class="neon-border"></div>
       </div>
       <br>
-      <h2>Hello!</h2>
+      <h2 onclick="playAudio()">Hello!</h2>
       <p>My name is Alexandra, and i'm Neural-Network Designer.</p>
       <p>I have a small experience in several programming languages.</p>
 	  <p>Which includes JS, Python, and C++ with BYOND modified version of C#.</p>
@@ -176,8 +215,11 @@
 		<iframe width="315" height="315" src="https://www.youtube.com/embed/jX5aSJub6BQ"></iframe>
     </div>
   </div>
-
-  <script>
+<audio id="myAudio">
+  <source src="hallo.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<script>
     // JavaScript code goes here
     var images = ['blue.svg', 'pink.svg', 'white.svg', 'pink.svg'];
     var currentImageIndex = 0;
@@ -188,9 +230,14 @@
       currentImageIndex = (currentImageIndex + 1) % images.length;
     }
 
-    setInterval(updateBodyBackground, 5000);
+    setInterval(updateBodyBackground, 10000);
     updateBodyBackground();
-  </script>
+
+	function playAudio() {
+		var audio = document.getElementById("myAudio");
+		audio.play();
+	}
+</script>
 </body>
 </html>
 
